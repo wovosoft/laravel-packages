@@ -1,0 +1,50 @@
+{
+    "name": "wovosoft/laravel-linux-dev-env",
+    "description": "Setup Laravel Development Environment in Linux",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Narayan Adhikary",
+            "email": "wovosoft@gmail.com",
+            "homepage": "https://wovosoft.com"
+        }
+    ],
+    "homepage": "https://github.com/wovosoft/laravel-linux-dev-env",
+    "keywords": [
+        "Laravel",
+        "Linux",
+        "Development",
+        "Environment",
+        "PostgreSQL",
+        "NGINX",
+        "Domains",
+        "Subdomains",
+        "localhost"
+    ],
+    "require": {
+        "illuminate/support": ">=10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wovosoft\\LaravelLinuxDevEnv\\": "src/"
+        },
+        "files": [
+            "src/Utils/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wovosoft\\LaravelLinuxDevEnv\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wovosoft\\LaravelLinuxDevEnv\\LaravelLinuxDevEnvServiceProvider"
+            ],
+            "aliases": {
+                "LaravelLinuxDevEnv": "Wovosoft\\LaravelLinuxDevEnv\\Facades\\LaravelLinuxDevEnv"
+            }
+        }
+    }
+}
