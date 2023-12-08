@@ -38,12 +38,13 @@ class DevEnvLink extends Command
 
         DevServer::make()
             ->setNginxConfig(
-                serverName            : $serverName . "." . $tld,
-                rootPath              : $path,
+                serverName: $serverName . "." . $tld,
+                rootPath  : $path,
 //                configDirectory       : storage_path("sites-available"),
 //                configEnabledDirectory: storage_path("sites-enabled"),
 //                vHostsPath            : storage_path("hosts")
             )
+            ->setPhpFpmSocket("/var/run/php/php8.2-fpm.sock")
             ->writeNginxConfig()
             ->enableNginxConfig()
             ->writeHostRecord()
